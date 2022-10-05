@@ -1,5 +1,6 @@
-const SUPABASE_URL = '';
-const SUPABASE_KEY = '';
+const SUPABASE_URL = 'https://ardehxxtbwarljasqfdg.supabase.co';
+const SUPABASE_KEY =
+    'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFyZGVoeHh0YndhcmxqYXNxZmRnIiwicm9sZSI6ImFub24iLCJpYXQiOjE2NjUwMDExNDIsImV4cCI6MTk4MDU3NzE0Mn0.uVbIL_6CQD7Te_lx7YlOlh6lYc74KQr5DdDIT1bGkc0';
 const client = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 
 /* Auth related functions */
