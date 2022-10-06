@@ -2,7 +2,8 @@ export function renderThread(thread) {
     const li = document.createElement('li');
     li.classList.add('post');
     const a = document.createElement('a');
-    // a.href =
+
+    a.href = `/post/?id=${thread.id}`;
 
     const username = document.createElement('a');
     username.textContent = `u/${thread.username}`;
@@ -24,6 +25,20 @@ export function renderThread(thread) {
     }
 
     li.append(a);
+
+    return li;
+}
+
+export function renderComments(comment) {
+    const li = document.createElement('li');
+
+    const h4 = document.createElement('h4');
+    // h4.textContent = `r/${thread.username}`;
+
+    const p = document.createElement('p');
+    p.textContent = comment.text;
+
+    li.append(h4, p);
 
     return li;
 }

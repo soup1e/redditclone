@@ -69,3 +69,9 @@ main {
 .hidden {
     display: none;
 }
+
+.title {
+    text-decoration: none;
+    color: initial;
+    cursor: pointer;
+}
