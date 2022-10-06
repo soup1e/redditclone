@@ -42,7 +42,8 @@ export async function getThread(id) {
         .from('posts')
         .select(
             `
-            *
+            *,
+            comments(*)
             `
         )
         .eq('id', id)
