@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&family=Noto+Sans&display=swap');
 main {
     display: grid;
-    flex-direction: column;
     justify-content: center;
 }
 
