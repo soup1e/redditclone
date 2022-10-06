@@ -28,3 +28,21 @@ export async function signOutUser() {
 }
 
 /* Data functions */
+
+export async function createThreads(thread) {
+    return await client.from('posts').insert(thread);
+}
+
+export async function getThreads(id) {
+    return await client
+        .from('posts')
+        .select(
+            `
+            *,
+            comments (*)
+            `
+        )
+        .eq('id', id)
+        .order('created_at', { foreignTable: 'comments', ascending: false })
+        .single();
+}
