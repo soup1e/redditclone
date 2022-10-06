@@ -33,13 +33,16 @@ export async function createThreads(thread) {
     return await client.from('posts').insert(thread);
 }
 
-export async function getThreads(id) {
+export async function getThreads() {
+    return await client.from('posts').select('*');
+}
+
+export async function getThread(id) {
     return await client
         .from('posts')
         .select(
             `
-            *,
-            comments (*)
+            *
             `
         )
         .eq('id', id)

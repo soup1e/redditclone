@@ -25,7 +25,7 @@ window.addEventListener('load', async () => {
 });
 /* Display Functions */
 function displayThreads() {
-    threadList.innerHTML = '';
+    // threadList.innerHTML = ''; uncomment when button functions
 
     for (const thread of threads) {
         const threadEl = renderThread(thread);
@@ -35,6 +35,7 @@ function displayThreads() {
 
 function displayError() {
     if (error) {
+        console.log(error);
         errorDisplay.textContent = error.message;
     } else {
         errorDisplay.textContent = '';
