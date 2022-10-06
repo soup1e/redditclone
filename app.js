@@ -25,17 +25,16 @@ window.addEventListener('load', async () => {
 });
 /* Display Functions */
 function displayThreads() {
-    // threadList.innerHTML = ''; uncomment when button functions
+    threadList.innerHTML = '';
 
     for (const thread of threads) {
         const threadEl = renderThread(thread);
-        threadEl.append(threadEl);
+        threadList.append(threadEl);
     }
 }
 
 function displayError() {
     if (error) {
-        console.log(error);
         errorDisplay.textContent = error.message;
     } else {
         errorDisplay.textContent = '';

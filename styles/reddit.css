@@ -19,7 +19,7 @@ main {
 li {
     margin-bottom: 20px;
 }
-#username {
+.username {
     display: flex;
     justify-content: flex-end;
     font-family: 'Noto Sans', sans-serif;
