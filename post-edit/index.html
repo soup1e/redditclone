@@ -7,12 +7,14 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
         <!-- title and favicon -->
-        <title>Supabase Web App</title>
+        <title>Create a post</title>
         <link rel="icon" type="image/x-icon" href="/assets/alchemy-favicon.png" />
 
         <!-- js -->
         <script defer src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
-        <script type="module" src="app.js"></script>
+        
+        <script type="module" src="post.js"></script>
+
 
         <!-- fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -25,14 +27,14 @@
         <!-- css -->
         <link rel="stylesheet" href="/styles/reset.css" />
         <link rel="stylesheet" href="/styles/global.css" />
-        <link rel="stylesheet" href="/styles/reddit.css" />
+        <link rel="stylesheet" href="/post-edit/create.css" />
 
         <!-- add link for page specific css -->
     </head>
 
     <body>
         <header class="page-header">
-            <img class="logo" src="assets/reddit.PNG" alt="logo" />
+            <img class="logo" src="../assets/reddit.PNG" alt="logo" />
             <a href="/" class="title">Reddit</a>
             <nav>
                 <a id="sign-out-link" href="auth">Sign Out</a>
@@ -40,27 +42,34 @@
         </header>
 
         <main>
-            <a href="post-edit\index.html">create a post</a>
+            <form id="form">
+                <label>
+                    <div>Title</div>
+                    <input name="title" required placeholder="Post Title" />
+                </label>
 
-            <ul id="thread-list">
-                <li class="post">
-                    <a href="/">
-                        <a href="" class="username">u/username</a>
-                        <h3>Title</h3>
-                        <img src="assets\alchemy-favicon.png" alt="Image" />
-                        <p>Text Content</p>
-                    </a>
-                </li>
-                <li class="post">
-                    <a href="/">
-                        <a href="" class="username">u/username</a>
-                        <h3>Title</h3>
-                        <img src="assets\html_css_js.png" alt="Image" />
-                        <p>Text Content</p>
-                    </a>
-                </li>
-            </ul>
-            <p id="error-display"></p>
+                <label>
+                    <div>Text</div>
+                    <textarea name="text" required placeholder="Text"></textarea>
+                </label>
+
+                <label>
+                    <div>Photo</div>
+                    <input
+                        id="image-input"
+                        name="image"
+                        type="file"
+                        placeholder="upload an image..."
+                    />
+                    <img id='preview' alt="preview" src="../assets/reddit.PNG">
+                </label>
+                <a href="/" formnovalidate>
+                    <input class='cancel' type="button" value="Cancel"></input>
+                </a>
+                <button>Post</button>
+
+                <p id="error-display"></p>
+            </form>
         </main>
     </body>
 </html>
