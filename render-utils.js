@@ -16,7 +16,7 @@ export function renderThread(thread) {
     p.textContent = thread.text;
 
     const img = document.createElement('img');
-    img.src = thread.img_url;
+    img.src = thread.image_url;
 
     if (thread.image_url) {
         a.append(username, h3, img, p);
@@ -33,7 +33,7 @@ export function renderComments(comment) {
     const li = document.createElement('li');
 
     const h4 = document.createElement('h4');
-    // h4.textContent = `r/${thread.username}`;
+    h4.textContent = `u/${comment.username}`;
 
     const p = document.createElement('p');
     p.textContent = comment.text;

@@ -4,6 +4,7 @@ import { getThread, createComment } from '../fetch-utils.js';
 import { renderComments } from '../render-utils.js';
 
 const errorDisplay = document.getElementById('error-display');
+const postUsername = document.getElementById('post-username');
 const postTitle = document.getElementById('post-title');
 const postImage = document.getElementById('post-image');
 const postText = document.getElementById('post-text');
@@ -12,7 +13,6 @@ const commentForm = document.getElementById('comment-form');
 
 let error = [];
 let thread = [];
-let threads = [];
 
 window.addEventListener('load', async () => {
     const searchParameters = new URLSearchParams(location.search);
@@ -58,6 +58,7 @@ commentForm.addEventListener('submit', async (e) => {
     }
 });
 function displayThread() {
+    postUsername.textContent = `u/${thread.username}`;
     postTitle.textContent = thread.title;
     postText.textContent = thread.text;
     if (thread.image_url) {
